@@ -1,0 +1,10 @@
+{
+  "name": "finance-teddy-app-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/finance-teddy-app-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["finance-teddy-app"],
+  "// targets": "to see all targets run: nx show project finance-teddy-app-e2e --web",
+  "targets": {}
+}

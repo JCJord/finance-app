@@ -1,0 +1,12 @@
+<button 
+  class="btn rounded-1 w-100 fw-bold"
+  [ngClass]="{
+    'btn-solid': variant === 'solid',
+    'btn-outline': variant === 'outline',
+    'btn-md': size === 'md',
+    'btn-lg': size === 'lg',
+  }"
+  [disabled]="disabled"
+>
+  <ng-content></ng-content>
+</button>

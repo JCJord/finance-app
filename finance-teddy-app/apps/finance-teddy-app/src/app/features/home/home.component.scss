@@ -1,0 +1,14 @@
+.home {
+    &__container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        min-width: 521px;
+    }
+
+    &__title {
+        font-size: 36px;
+    }
+}

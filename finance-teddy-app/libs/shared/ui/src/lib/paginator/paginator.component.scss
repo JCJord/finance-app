@@ -1,0 +1,10 @@
+.pagination { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  }
+.page-item.active .page-link {
+    background-color: #EC6724;
+    border: 1px solid #EC6724;
+    color: white;
+}

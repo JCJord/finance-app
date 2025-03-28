@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Client, ClientMetaData } from '../models/client.model';  // Import the Client model
-
+import { environment } from '../../../../../environments/environment.prod'; // Adjust the path as necessary
 @Injectable({
   providedIn: 'root',  // This will provide the service globally
 })
 export class ClientService {
 
-  private apiUrl = 'https://boasorte.teddybackoffice.com.br/users'; // Replace with actual API URL
+  private apiUrl = environment + '/users'; // Replace with actual API URL
 
   constructor(private http: HttpClient) {}
 

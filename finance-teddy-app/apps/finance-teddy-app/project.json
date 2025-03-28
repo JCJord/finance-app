@@ -20,11 +20,17 @@
           {
             "glob": "**/*",
             "input": "apps/finance-teddy-app/public"
+          },
+          {
+            "glob": "**/*",
+            "input": "libs/clients/src/assets",
+            "output": "assets/clients"
           }
         ],
         "styles": [
           "node_modules/bootstrap/dist/css/bootstrap.min.css",
-          "apps/finance-teddy-app/src/styles.scss"
+          "apps/finance-teddy-app/src/styles.scss",
+          "node_modules/bootstrap-icons/font/bootstrap-icons.css"
         ],
         "scripts": [
           "node_modules/bootstrap/dist/js/bootstrap.min.js"

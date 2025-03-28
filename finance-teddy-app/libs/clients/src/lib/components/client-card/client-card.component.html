@@ -1,0 +1,21 @@
+<div class="card__container">
+    <div class="d-flex flex-column align-items-center gap-2 pt-3">
+        <div class="fw-bold fs-16">
+            {{client.name}}
+        </div>
+        <div class="fs-14">
+            Salário: {{client.salary | currency: 'BRL': 'symbol' : '1.2-2' }}
+        </div>
+        <div class="fs-14">
+            Empresa: {{client.companyValuation | currency: 'BRL': 'symbol' : '1.2-2' }}
+        </div>
+    </div>
+    <div *ngIf="!removeOnly"  class="d-flex justify-content-between align-items-center px-3 pb-3 pt-2">
+        <button class="btn p-0" (click)="addToSelectedClients(client)"><img src="assets/clients/icons/plus-icon.svg" alt=""></button>
+        <button class="btn p-0" (click)="openUpdateDialog('0ms', '0ms')"><img src="assets/clients/icons/pen-icon.svg" alt=""></button>
+        <button class="btn p-0" (click)="deleteClient()"><img src="assets/clients/icons/bin-icon.svg" alt=""></button>
+    </div>
+    <div *ngIf="removeOnly" class="d-flex justify-content-end align-items-center px-3 pb-2">
+        <button class="btn m-0 p-0 dash-button" (click)="deselectClient()"><i class="bi bi-dash"></i></button>
+    </div>
+</div>

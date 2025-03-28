@@ -1,0 +1,55 @@
+@if (!isSelectedView) {
+    <div class="container mt-5">
+      <div class="d-flex justify-content-between classmb-2">
+        <div class="mb-1">
+          <span>
+              clientes encontrados:
+          </span>
+          <span class="fw-bold">
+              {{ (clients$ | async)?.length }}
+          </span>
+        </div>
+        <form class="pb-3" [formGroup]="clientPerPageForm">
+          <lib-select-input name="clientPerPage" [options]="clientsPerPageOptions"></lib-select-input>
+        </form>
+      </div>
+      <div *ngIf="loading$ | async; else loadedContent">
+        <div class="d-flex flex-wrap gap-5">
+          <client-card-skeleton *ngFor="let skeleton of [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]"></client-card-skeleton>
+        </div>
+      </div>
+      <ng-template #loadedContent>
+        <div *ngIf="clients$ | async as clients">
+          <clients-list [clients]="clients"></clients-list>
+        </div>
+      </ng-template>
+      <div *ngIf="!(loading$ | async)">
+        <div class="mt-3">
+          <lib-paginator 
+            *ngIf="!(loading$ | async)"
+            [currentPage]="(pagination$ | async)?.currentPage || 1"
+            [totalPages]="(pagination$ | async)?.totalPages || 1"
+            (pageChange)="onPageChange($event)"
+          ></lib-paginator>
+        </div>
+        <div class="w-100 mt-3">
+          <lib-button (click)="openDialog('0ms', '0ms')" variant="outline">Criar cliente</lib-button>
+        </div>
+      </div>
+    </div>
+  }@else {
+    <div class="container mt-5">
+      <div *ngIf="(selectedClients$ | async)?.length">
+        <h4  class="fw-bold">Clientes Selecionados: </h4>
+        <div *ngIf="selectedClients$ | async as selectedClients">
+          <clients-list [removeOnly]="true" [clients]="selectedClients"></clients-list>
+        </div>
+        <div class="w-100 mt-3">
+          <lib-button variant="outline" (onClick)="clearAllSelectedClients()">Limpar clientes selecionados</lib-button>
+        </div>
+      </div>
+      <div *ngIf="!(selectedClients$ | async)?.length">
+        <h4  class="fw-bold">Nenhum cliente selecionado</h4>
+      </div>
+    </div>
+  }

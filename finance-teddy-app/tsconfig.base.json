@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@finance-teddy-app/ui": ["libs/shared/ui/src/index.ts"]
+      "@finance-teddy-app/clients": ["libs/clients/src/index.ts"],
+      "@finance-teddy-app/ui": ["libs/shared/ui/src/index.ts"],
+      "clientsMfe/Routes": [
+        "apps/clientsMfe/src/app/remote-entry/entry.routes.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,24 @@
+<h2 class="fw-bold" mat-dialog-title>
+  Atualizar cliente:
+</h2>
+<mat-dialog-content>
+  <form [formGroup]="updateClientForm">
+    <div class="row py-2 gy-2">
+      <lib-text-input class="col-12" name="name" label="Digite o seu nome:" size="md"></lib-text-input>
+      <lib-number-input class="col-12"  name="salary" label="Digite o salário:" size="md"></lib-number-input>
+      <lib-number-input class="col-12"  name="companyValuation" label="Digite o valor da empresa:" size="md"></lib-number-input>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="w-100">
+    <lib-button variant="solid" (onClick)="submit()" [disabled]="!updateClientForm.valid">
+      Atualizar Cliente
+    </lib-button>
+  </div>
+</mat-dialog-actions>
+
+
+<!-- Copyright 2025 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license -->

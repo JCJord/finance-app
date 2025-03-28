@@ -1,0 +1,10 @@
+
+{
+    "name": "clientsMfe",
+    "version": "0.0.0",
+    "scripts": {
+      "build": "nx build clientsMfe",
+      "start": "nx serve-static clientsMfe"
+    },
+    "private": true
+  }

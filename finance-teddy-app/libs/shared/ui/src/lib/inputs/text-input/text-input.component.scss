@@ -1,0 +1,24 @@
+.input {
+    &__field {
+        border-radius: 4px;
+        border: 2px solid #D9D9D9;
+        color: #7b7b7b;
+        &::placeholder {
+            color: #AAAAAA;
+        }
+    }
+}
+
+.input-lg {
+    height: 60px;
+    font-size: 24px;
+}
+
+.input-md {
+    height: 40px;
+    font-size: 16px;
+}
+
+.is-invalid {
+    border-color: red;
+}

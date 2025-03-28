@@ -1,0 +1,16 @@
+<div class="header__container d-flex align-items-center justify-content-between px-5">
+    <div class="d-flex align-items-center">
+        <i class="header__menu bi bi-list text-secondary me-5"></i>
+        <img src="assets/clients/icons/logo.svg" alt="">
+    </div>
+
+    <div class="header__links d-flex gap-5">
+        <a routerLink="clients" routerLinkActive="active" class="header__link">Clientes</a>
+        <a routerLink="selectedClients" routerLinkActive="active" class="header__link">Clientes Selecionados</a>
+        <a class="header__link" (click)="logout()">Sair</a>
+    </div>
+
+    <div>
+        Olá, <span class="fw-bold" *ngIf="userName$ | async as userName">{{ userName }}</span>!
+    </div>
+</div>

@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
-
+import { Router, RouterModule } from '@angular/router';
+import { HeaderComponent } from './core/components/header/header.component';
+import { CommonModule } from '@angular/common';
 @Component({
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [CommonModule, RouterModule, HeaderComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'finance-teddy-app';
+  constructor(private router: Router) {}
+
+  isNotHomePage() {
+    return this.router.url !== '/';
+  }
 }

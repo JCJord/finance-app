@@ -8,7 +8,7 @@ import { environment } from '../../../../../environments/environment.prod'; // A
 })
 export class ClientService {
 
-  private apiUrl = environment + '/users'; // Replace with actual API URL
+  private apiUrl = 'https://boasorte.teddybackoffice.com.br/users';
 
   constructor(private http: HttpClient) {}
 

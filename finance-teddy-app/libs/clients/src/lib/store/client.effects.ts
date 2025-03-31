@@ -12,8 +12,7 @@ export class ClientEffects {
       switchMap(({ page, limit }) =>
         this.clientService.getClients(page, limit).pipe(
           map((response: ClientMetaData) => {
-            // Assuming the response is in the format: { clients: [...], totalPages: ..., currentPage: ... }
-            const clientMetaData = response;  // Assuming the API returns an object containing client data and pagination info
+            const clientMetaData = response;
             return loadClientsSuccess({ clientMetaData: clientMetaData });
           }),
           catchError(error => {

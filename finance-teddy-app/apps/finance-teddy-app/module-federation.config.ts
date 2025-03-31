@@ -14,7 +14,7 @@ const config: ModuleFederationConfig = {
    * declare module 'my-external-remote';
    *
    */
-  remotes: ['clientsMfe'],
+  remotes: [['clientsMfe', 'https://finance-app-mfe.vercel.app/']],
 };
 
 /**

@@ -29,7 +29,7 @@ export class CreateClientDialog {
         if (this.addClientForm.valid) {
             const newClient = this.addClientForm.value as Client;
             this.store.dispatch(createClient({ client: newClient }));
-            this.dialogRef.close();  // Close the dialog after submission
+            this.dialogRef.close();
         }
     }
 }

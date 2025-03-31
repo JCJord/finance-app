@@ -24,6 +24,18 @@ export class ClientEffects {
     )
   );
 
+  createClient$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(createClient),
+      switchMap(({ client }) =>
+        this.clientService.addClient(client).pipe(
+          map((newClient) => createClientSuccess({ client: newClient })),
+          catchError((error) => of(createClientFailure({ error: error.message })))
+        )
+      )
+    )
+  );
+
   updateClient$ = createEffect(() =>
     this.actions$.pipe(
       ofType(updateClient),

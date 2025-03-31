@@ -1,0 +1,13 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "apps/finance-teddy-app/**",
+        "use": "@vercel/static",
+        "config": { "distDir": "dist/apps/finance-teddy-app" }
+      }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "/index.html" }
+    ]
+  }

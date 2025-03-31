@@ -1,0 +1,13 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "apps/clientsMfe/**",
+        "use": "@vercel/static",
+        "config": { "distDir": "dist/apps/clientsMfe" }
+      }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "/index.html" }
+    ]
+  }

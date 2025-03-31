@@ -1,9 +1,0 @@
-{
-    "name": "finance-teddy-app",
-    "version": "0.0.0",
-    "scripts": {
-      "build": "nx build finance-teddy-app",
-      "start": "nx serve-static finance-teddy-app"
-    },
-    "private": true
-  }

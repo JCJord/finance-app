@@ -1,12 +1,8 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "apps/finance-teddy-app/**",
-        "use": "@vercel/static",
-        "config": { "distDir": "dist/apps/finance-teddy-app" }
-      }
-    ],
+    "buildCommand": "npx nx build finance-teddy-app",
+    "installCommand": "npm install",
+    "outputDirectory": "dist/apps/finance-teddy-app",
     "routes": [
       { "src": "/(.*)", "dest": "/index.html" }
     ]
